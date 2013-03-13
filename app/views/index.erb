@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Sudoku Solver</h1>
+  <form action="/solve" method="post">
+    <div class="board table">
+      <% 9.times do |row| %>
+      <div class="row">
+        <% 9.times do |cell| %>
+          <div class="cell">
+            <input type="text" name="sudoku[<%= row %>][<%= cell %>]" />
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <input type="submit" value="Solve it" />
+  </form>
+</div>
