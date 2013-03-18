@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Sudoku Solver</h1>
-  <form action="/solve" method="post">
+  <form action="/" method="post">
     <div class="board table">
       <% 9.times do |row| %>
       <div class="row">
@@ -15,3 +15,13 @@
     <input type="submit" value="Solve it" />
   </form>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    loadSample();
+    <% if @board %>
+      var board = <%= @board %>;
+      solve(board);
+    <% end %>
+  });
+</script>
